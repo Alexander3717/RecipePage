@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html, main {
+  min-height: 100vh;
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  background-color: hsl(30, 54%, 90%);
+}
+
+/*# sourceMappingURL=style.css.map */

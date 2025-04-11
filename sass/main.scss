@@ -1,0 +1,60 @@
+// function to convert from px to rem */
+@use 'sass:math';
+
+@function rem($value) {
+
+    @if math.is-unitless($value) {
+        @return math.div($value, 16) + rem;
+    }
+
+    @else if unit($value) == 'px' {
+        @return math.div($value, 1px) / 16 + rem;
+    }
+
+    @else {
+        @error "The rem() function only accepts unitless numbers or px values. You passed: #{$value}";
+    }
+}
+
+$color-brown-800: hsl(14 45% 36%);
+$color-rose-50: hsl(330 100% 98%);
+$color-rose-800: hsl(332 51% 32%);
+$color-stone-100: hsl(30 54% 90%);
+$color-stone-150: hsl(30 18% 87%);
+$color-stone-600: hsl(30 10% 34%);
+$color-stone-900: hsl(24 5% 18%);
+$color-white: hsl(0 0% 100%);
+
+$font-size-desktop-text-preset-4: 1rem;
+$font-size-desktop-text-preset-3: 1.25rem;
+$font-size-desktop-text-preset-2: 1.75rem;
+$font-size-desktop-text-preset-1: 2.5rem;
+
+$font-size-mobile-text-preset-1: 2.25rem;
+
+$spacing-100: 0.5rem;
+$spacing-150: 0.75rem;
+$spacing-200: 1rem;
+$spacing-300: 1.5rem;
+$spacing-400: 2rem;
+$spacing-500: 2.5rem;
+$spacing-600: 3rem;
+$spacing-1600: 8rem;
+
+* {
+    box-sizing: border-box;
+}
+body, html, main {
+    min-height: 100vh;
+    margin: 0;
+
+    width: 100%;
+}
+body {
+    background-color: $color-stone-100;
+}
+
+
+
+
+
