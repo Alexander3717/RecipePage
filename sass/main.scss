@@ -16,14 +16,15 @@
     }
 }
 
-$color-brown-800: hsl(14 45% 36%);
-$color-rose-50: hsl(330 100% 98%);
-$color-rose-800: hsl(332 51% 32%);
-$color-stone-100: hsl(30 54% 90%);
-$color-stone-150: hsl(30 18% 87%);
-$color-stone-600: hsl(30 10% 34%);
-$color-stone-900: hsl(24 5% 18%);
-$color-white: hsl(0 0% 100%);
+// variables
+$color-brown-800: #854632;
+$color-rose-50: #fff7fb;
+$color-rose-800: #7a284e;
+$color-stone-100: #f3e5d7;
+$color-stone-150: #e3ddd7;
+$color-stone-600: #5f564d;
+$color-stone-900: #312e2c;
+$color-white: #ffffff;
 
 $font-size-desktop-text-preset-4: 1rem;
 $font-size-desktop-text-preset-3: 1.25rem;
@@ -41,6 +42,63 @@ $spacing-500: 2.5rem;
 $spacing-600: 3rem;
 $spacing-1600: 8rem;
 
+// text presets
+@mixin text-preset-1 {
+    color: $color-stone-900;
+    font-family: "Young Serif";
+    font-size: $font-size-desktop-text-preset-1;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+@mixin text-preset-1-mobile {
+    color: $color-stone-900;
+    font-family: "Young Serif";
+    font-size: $font-size-mobile-text-preset-1;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+@mixin text-preset-2 {
+    color: $color-stone-900;
+    font-family: "Young Serif";
+    font-size: $font-size-desktop-text-preset-2;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+  
+@mixin text-preset-3 {
+    color: $color-stone-900;
+    font-family: "Outfit";
+    font-size: $font-size-desktop-text-preset-3;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+}
+  
+@mixin text-preset-4 {
+    color: $color-stone-600;
+    font-family: "Outfit";
+    font-size: $font-size-desktop-text-preset-4;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+  
+@mixin text-preset-4-bold {
+    color: $color-stone-600;
+    font-family: "Outfit";
+    font-size: $font-size-desktop-text-preset-4;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+// start of styling
+
 * {
     box-sizing: border-box;
 }
@@ -53,8 +111,150 @@ body, html, main {
 body {
     background-color: $color-stone-100;
 }
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1, h2, h3, p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
 
+.recipe {
+    max-width: rem(375px); /* will change this later */
+    width: 100%;
+}
+.recipe h1 {
+    @include text-preset-1-mobile;
+}
+.recipe h2 {
+    @include text-preset-2;
+    color: $color-brown-800;
+}
+.recipe h3 {
+    @include text-preset-3;
+    color: $color-rose-800;
+}
+.recipe p, .recipe ul, .recipe ol {
+    @include text-preset-4;
+}
+.recipe b {
+    @include text-preset-4-bold;
+}
 
+.recipe__header, .recipe section {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-300;
+}
 
+.recipe hr {
+    width: 100%;
+    height: rem(1px);
+    margin: 0;
+    border: none;
+    background-color: $color-stone-150;
+}
+
+.recipe ul, .recipe ol {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-100;
+}
+
+.recipe ol {
+    counter-reset: listCounter;
+}
+
+.recipe ul li, .recipe ol li {
+    display: flex;
+    align-items: center;
+    padding-left: $spacing-100;
+    gap: $spacing-200;
+}
+
+.recipe ol li {
+    counter-increment: listCounter;
+}
+
+.recipe ul li::before {
+    content: "";
+    background-color: $color-rose-800;
+    height: rem(4px);
+    width: rem(4px);
+    border-radius: 50%;
+    margin-right: calc($spacing-200 - rem(4px));
+    flex-shrink: 0;
+}
+
+.recipe ol li::before {
+    content: counter(listCounter, decimal)".";
+    @include text-preset-4-bold;
+    color: $color-brown-800;
+
+    align-self: flex-start;
+
+    flex-shrink: 0;
+}
+
+.recipe__image {
+    width: 100%;
+    height: rem(171px);
+    object-fit: cover;
+    display: block;
+}
+
+.recipe__text-content {
+    width: 100%;
+    padding: $spacing-500 $spacing-400;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-400;
+
+    background-color: $color-white;
+}
+
+.recipe .recipe__time { /* I put the `.recipe` there because we need to beat the specifity of the `.recipe section rule` higher */
+    gap: $spacing-200;
+    padding: $spacing-300;
+    background-color: $color-rose-50;
+    border-radius: $spacing-150;
+}
+
+.recipe__nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recipe__nutrition-table th, td {
+    text-align: left;
+    border-bottom: rem(1px) solid $color-stone-150;
+    padding-top: $spacing-150;
+    padding-bottom: $spacing-150;
+}
+
+.recipe__nutrition-table th {
+    @include text-preset-4;
+    padding-left: $spacing-400;
+}
+
+.recipe__nutrition-table td {
+    @include text-preset-4-bold;
+    color: $color-brown-800;
+    padding-right: $spacing-400;
+}
+
+.recipe__nutrition-table tr:first-child td, 
+.recipe__nutrition-table tr:first-child th {
+    padding-top: 0;
+}
+
+.recipe__nutrition-table tr:last-child td,
+.recipe__nutrition-table tr:last-child th {
+    padding-bottom: 0;
+    border: none;
+}
 
 

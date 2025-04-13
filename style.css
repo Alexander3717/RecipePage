@@ -9,7 +9,195 @@ body, html, main {
 }
 
 body {
-  background-color: hsl(30, 54%, 90%);
+  background-color: #f3e5d7;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+.recipe {
+  max-width: 23.4375rem; /* will change this later */
+  width: 100%;
+}
+
+.recipe h1 {
+  color: #312e2c;
+  font-family: "Young Serif";
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.recipe h2 {
+  color: #312e2c;
+  font-family: "Young Serif";
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  color: #854632;
+}
+
+.recipe h3 {
+  color: #312e2c;
+  font-family: "Outfit";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  color: #7a284e;
+}
+
+.recipe p, .recipe ul, .recipe ol {
+  color: #5f564d;
+  font-family: "Outfit";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.recipe b {
+  color: #5f564d;
+  font-family: "Outfit";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.recipe__header, .recipe section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recipe hr {
+  width: 100%;
+  height: 0.0625rem;
+  margin: 0;
+  border: none;
+  background-color: #e3ddd7;
+}
+
+.recipe ul, .recipe ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe ol {
+  counter-reset: listCounter;
+}
+
+.recipe ul li, .recipe ol li {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  gap: 1rem;
+}
+
+.recipe ol li {
+  counter-increment: listCounter;
+}
+
+.recipe ul li::before {
+  content: "";
+  background-color: #7a284e;
+  height: 0.25rem;
+  width: 0.25rem;
+  border-radius: 50%;
+  margin-right: calc(1rem - 0.25rem);
+  flex-shrink: 0;
+}
+
+.recipe ol li::before {
+  content: counter(listCounter, decimal) ".";
+  color: #5f564d;
+  font-family: "Outfit";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  color: #854632;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.recipe__image {
+  width: 100%;
+  height: 10.6875rem;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe__text-content {
+  width: 100%;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #ffffff;
+}
+
+.recipe .recipe__time { /* I put the `.recipe` there because we need to beat the specifity of the `.recipe section rule` higher */
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #fff7fb;
+  border-radius: 0.75rem;
+}
+
+.recipe__nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recipe__nutrition-table th, td {
+  text-align: left;
+  border-bottom: 0.0625rem solid #e3ddd7;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.recipe__nutrition-table th {
+  color: #5f564d;
+  font-family: "Outfit";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  padding-left: 2rem;
+}
+
+.recipe__nutrition-table td {
+  color: #5f564d;
+  font-family: "Outfit";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  color: #854632;
+  padding-right: 2rem;
+}
+
+.recipe__nutrition-table tr:first-child td,
+.recipe__nutrition-table tr:first-child th {
+  padding-top: 0;
+}
+
+.recipe__nutrition-table tr:last-child td,
+.recipe__nutrition-table tr:last-child th {
+  padding-bottom: 0;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
