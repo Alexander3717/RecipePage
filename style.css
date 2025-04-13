@@ -24,8 +24,8 @@ h1, h2, h3, p, ul, ol {
 }
 
 .recipe {
-  max-width: 23.4375rem; /* will change this later */
   width: 100%;
+  background-color: #ffffff;
 }
 
 .recipe h1 {
@@ -198,6 +198,38 @@ h1, h2, h3, p, ul, ol {
 .recipe__nutrition-table tr:last-child th {
   padding-bottom: 0;
   border: none;
+}
+
+@media (min-width: 48rem) {
+  main {
+    padding: 8rem 3rem;
+  }
+  .recipe {
+    max-width: 38.5rem;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+  }
+  .recipe h1 {
+    color: #312e2c;
+    font-family: "Young Serif";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+  .recipe__image {
+    height: 18.75rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .recipe__text-content {
+    padding: 0;
+  }
+}
+@media (min-width: 75rem) {
+  .recipe {
+    max-width: 46rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
