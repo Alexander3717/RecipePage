@@ -22,7 +22,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 ![](./screenshot.png)
 
 ### Links
-- Solution URL: [View solution on Frontend Mentor](https://www.frontendmentor.io/solutions/)
+- Solution URL: [View solution on Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-recipe-page-using-flexbox-and-media-queries-styled-in-scss-e6GLw2O4-w)
 - Live Site URL: [View live site](https://alexander3717.github.io/RecipePage/)
 
 ## My process
