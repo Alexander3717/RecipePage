@@ -83,8 +83,12 @@ Took advantage of nesting - instead of writing
 
 ```css
 .recipe h1 {/*styles here*/}
+
 .recipe h2 {/*styles here*/}
-.recipe h3 {/*styles here*/}
+
+.recipe p, .recipe ul, .recipe ol {
+    /*styles here*/
+}
 ```
 
 I wrote
@@ -92,8 +96,12 @@ I wrote
 ```scss
 .recipe {
     h1 {/*styles here*/}
+
     h2 {/*styles here*/}
-    h3 {/*styles here*/}
+
+    p, ul, ol {
+        /*styles here*/
+    }
 }
 ```
 

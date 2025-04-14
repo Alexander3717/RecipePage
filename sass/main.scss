@@ -167,10 +167,6 @@ h1, h2, h3, p, ul, ol {
         @include text-preset-2;
         color: $color-brown-800;
     }
-    h3 {
-        @include text-preset-3;
-        color: $color-rose-800;
-    }
     p, ul, ol {
         @include text-preset-4;
     }
@@ -263,6 +259,11 @@ h1, h2, h3, p, ul, ol {
         padding: $spacing-300;
         background-color: $color-rose-50;
         border-radius: $spacing-150;
+
+        h2 {
+            @include text-preset-3;
+            color: $color-rose-800;
+        }
     }
 
     &__nutrition-table {

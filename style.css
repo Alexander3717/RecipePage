@@ -71,15 +71,6 @@ h1, h2, h3, p, ul, ol {
   line-height: 100%;
   color: #854632;
 }
-.recipe h3 {
-  color: #312e2c;
-  font-family: "Outfit";
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 100%;
-  color: #7a284e;
-}
 .recipe p, .recipe ul, .recipe ol {
   color: #5f564d;
   font-family: "Outfit";
@@ -177,6 +168,15 @@ h1, h2, h3, p, ul, ol {
   padding: 1.5rem;
   background-color: #fff7fb;
   border-radius: 0.75rem;
+}
+.recipe .recipe__time h2 {
+  color: #312e2c;
+  font-family: "Outfit";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  color: #7a284e;
 }
 .recipe__nutrition-table {
   width: 100%;
